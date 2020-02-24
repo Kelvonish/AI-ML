@@ -1,11 +1,20 @@
-import random as r
+# -*- coding: utf-8 -*-
+import random  as r
+
 from ttictoc import TicToc
 import matplotlib.pyplot as plt 
 t = TicToc()
 run=0
 def mergeSort(alist):
-    print("Splitting ",alist)
-    if len(alist)>1:
+   global run
+   run= 1+run
+   f = run/17
+   print("IS INTEGER",f.is_integer())
+   print(run)
+   if f.is_integer() or run==1:   
+      alist = [r.randint(501,10000 ),r.randint(501,10000 ),r.randint(501,10000 ),r.randint(501,10000 ),r.randint(501,10000 ),r.randint(501,10000 ),r.randint(501,10000 ),r.randint(501,10000 ),r.randint(501,10000 )]
+   print("Splitting ",alist)
+   if len(alist)>1:
         mid = len(alist)//2
         lefthalf = alist[:mid]
         righthalf = alist[mid:]
@@ -34,13 +43,8 @@ def mergeSort(alist):
             alist[k]=righthalf[j]
             j=j+1
             k=k+1
-    print("Merging ",alist)
-
-
-alist = [r.randint(500, 9000),r.randint(500, 9000),r.randint(500, 9000),r.randint(500, 9000),r.randint(500, 9000),r.randint(500, 9000)]
-mergeSort(alist)
-print(alist)
-#print(random())
+   print("Merging ",alist)
+    
 i =0
 times = []
 while i<10:
@@ -52,9 +56,10 @@ while i<10:
     i=i+1
 #print(timeit.timeit(mergeSort([])))
 print(times)
-plt.plot([0,1000,2000,3000,4000,5000,6000,7000,8000,9000], times,marker='o',linewidth = 2) 
+plt.plot([1,2,3,4,5,6,7,8,9,10], times,marker='o',linewidth = 2) 
   
 # naming the x axis 
 plt.xlabel('Merge Number') 
 # naming the y axis 
 plt.ylabel('Time') 
+  

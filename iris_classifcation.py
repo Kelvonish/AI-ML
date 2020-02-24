@@ -12,7 +12,7 @@ iris=datasets.load_iris()
 #spilt data into train and test sets
 X=iris.data
 y=iris.target
-X_train,X_test,y_train,y_test = train_test_split(X,y,test_size=.5)
+X_train,X_test,y_train,y_test = train_test_split(X,y,test_size=.4,random_state=42)
 #print(X_train.shape)
 
 #build and train model
